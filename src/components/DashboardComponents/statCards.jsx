@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 const StatCard = ({ title, value, change, icon: Icon, trend }) => (
-  <Card className="bg-[#1a1818] border-[#363A42] hover:shadow-[0_0_20px] transition-shadow hover:shadow-yellow/35">
+  <Card className="bg-[#1a1818] border-[#363A42] hover:shadow-[0_0_20px] transition-shadow hover:shadow-[#2c20c9]/50">
     <CardContent className="">
       <div className="flex items-center justify-between">
         <div>
@@ -24,8 +24,8 @@ const StatCard = ({ title, value, change, icon: Icon, trend }) => (
             </div>
           )}
         </div>
-        <div className="p-3 bg-gradient-to-r from-yellow/35 to-orange/25 rounded-xl">
-          <Icon className="w-6 h-6 text-[#FEC36D]" />
+        <div className="p-3 bg-gradient-to-r from-[#4885e8]/80 to-[#2c20c9]/80 rounded-xl">
+          <Icon className="w-6 h-6 text-white" />
         </div>
       </div>
     </CardContent>

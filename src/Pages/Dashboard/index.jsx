@@ -44,8 +44,8 @@ const mockRevenueData = [
 ];
 
 const mockSubscriptionData = [
-  { name: "Free", value: 278, color: "#6b7280" },
-  { name: "Basic", value: 400, color: "#FEC36D" },
+  { name: "Free", value: 278, color: "#4885e8" },
+  { name: "Basic", value: 400, color: "#2c20c9" },
   { name: "Pro", value: 300, color: "#D78001" },
   { name: "Pro Plus", value: 200, color: "#FF5D02" },
   { name: "Top-Notch", value: 200, color: "#07ff3e66" },
@@ -130,8 +130,8 @@ const Dashboard = () => {
                       x2="0"
                       y2="1"
                     >
-                      <stop offset="5%" stopColor="#FEC36D" stopOpacity={0.3} />
-                      <stop offset="95%" stopColor="#d78001" stopOpacity={0} />
+                      <stop offset="5%" stopColor="#4885e8" stopOpacity={0.3} />
+                      <stop offset="95%" stopColor="#2c20c9" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#2a2828" />
@@ -149,7 +149,7 @@ const Dashboard = () => {
                   <Area
                     type="monotone"
                     dataKey="revenue"
-                    stroke="#FEC36D"
+                    stroke="#4885e8"
                     strokeWidth={2}
                     fill="url(#revenueGradient)"
                   />
@@ -163,7 +163,7 @@ const Dashboard = () => {
         <Card className="bg-[#1a1818] border-[#363A42]">
           <CardHeader>
             <CardTitle className="text-white">Subscription Plans</CardTitle>
-            <CardDescription className="text-gray-400">
+            <CardDescription className="text-light">
               Distribution by plan type
             </CardDescription>
           </CardHeader>
@@ -239,7 +239,7 @@ const Dashboard = () => {
                   labelStyle={{ color: "#fff" }}
                   formatter={(value) => [formatNumber(value), "Users"]}
                 />
-                <Bar dataKey="users" fill="#D78001" radius={[4, 4, 0, 0]} />
+                <Bar dataKey="users" fill="#4885e8" radius={[4, 4, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
