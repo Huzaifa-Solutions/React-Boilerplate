@@ -7,6 +7,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { ReactLogo } from "../../assets/svgs";
 import SidebarContent from "./sidebarContent";
+import ThemeToggle from "@/components/ui/switchTheme";
 
 const AdminLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -52,6 +53,7 @@ const AdminLayout = () => {
           </div>
 
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-[#2a2828]">
               <Avatar className="w-8 h-8">
                 <AvatarImage src={ReactLogo} />

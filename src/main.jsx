@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import setupLocatorUI from "@locator/runtime";
+import { ThemeProvider } from "./context/theme/themeContext.jsx";
 
 if (import.meta.env.DEV) {
   setupLocatorUI();
@@ -10,6 +11,8 @@ if (import.meta.env.DEV) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </StrictMode>,
 );
