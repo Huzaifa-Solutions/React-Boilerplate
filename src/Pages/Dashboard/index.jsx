@@ -70,8 +70,8 @@ const Dashboard = () => {
     <div className="lg:space-y-6 space-y-4">
       {/* Header */}
       <div>
-        <h1 className="md:text-2xl text-xl font-bold text-white">Dashboard</h1>
-        <p className="text-light md:text-base text-sm">
+        <h1 className="md:text-2xl text-xl font-bold">Dashboard</h1>
+        <p className="text-muted-foreground md:text-base text-sm">
           Welcome back! Here's what's happening.
         </p>
       </div>
@@ -111,10 +111,10 @@ const Dashboard = () => {
       {/* Charts Row */}
       <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-6 gap-4">
         {/* Revenue Chart */}
-        <Card className="xl:col-span-2 bg-[#1a1818] border-[#363A42]">
+        <Card className="xl:col-span-2 shadow-md">
           <CardHeader>
-            <CardTitle className="text-white">Revenue Overview</CardTitle>
-            <CardDescription className="text-gray-400">
+            <CardTitle>Revenue Overview</CardTitle>
+            <CardDescription>
               Monthly revenue for the current year
             </CardDescription>
           </CardHeader>
@@ -134,16 +134,16 @@ const Dashboard = () => {
                       <stop offset="95%" stopColor="#2c20c9" stopOpacity={0} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2a2828" />
-                  <XAxis dataKey="month" stroke="#aab2c7" />
-                  <YAxis stroke="#aab2c7" />
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
+                  <XAxis dataKey="month" stroke="var(--chart-axis)" />
+                  <YAxis stroke="var(--chart-axis)" />
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1a1818",
-                      border: "1px solid #2a2828",
+                      backgroundColor: "var(--chart-tooltip-bg)",
+                      border: "1px solid var(--chart-tooltip-border)",
                       borderRadius: "8px",
                     }}
-                    labelStyle={{ color: "#fff" }}
+                    labelStyle={{ color: "var(--foreground)" }}
                     formatter={(value) => [formatCurrency(value), "Revenue"]}
                   />
                   <Area
@@ -160,10 +160,10 @@ const Dashboard = () => {
         </Card>
 
         {/* Subscription Distribution */}
-        <Card className="bg-[#1a1818] border-[#363A42]">
+        <Card className="shadow-md">
           <CardHeader>
-            <CardTitle className="text-white">Subscription Plans</CardTitle>
-            <CardDescription className="text-light">
+            <CardTitle>Subscription Plans</CardTitle>
+            <CardDescription>
               Distribution by plan type
             </CardDescription>
           </CardHeader>
@@ -186,11 +186,11 @@ const Dashboard = () => {
                   </Pie>
                   <Tooltip
                     contentStyle={{
-                      backgroundColor: "#1a1818",
-                      border: "1px solid #2a2828",
+                      backgroundColor: "var(--chart-tooltip-bg)",
+                      border: "1px solid var(--chart-tooltip-border)",
                       borderRadius: "8px",
                     }}
-                    itemStyle={{ color: "#fff" }}
+                    itemStyle={{ color: "var(--foreground)" }}
                     formatter={(value) => [formatNumber(value), "Users"]}
                   />
                 </PieChart>
@@ -214,12 +214,12 @@ const Dashboard = () => {
       </div>
 
       {/* User Growth Chart */}
-      <Card className="bg-[#1a1818] border-[#363A42]">
+      <Card className="shadow-md">
         <CardHeader>
-          <CardTitle className="text-white lg:text-lg text-base">
+          <CardTitle className="lg:text-lg text-base">
             User Growth
           </CardTitle>
-          <CardDescription className="text-light">
+          <CardDescription>
             New user registrations over time
           </CardDescription>
         </CardHeader>
@@ -227,16 +227,16 @@ const Dashboard = () => {
           <div className="h-[250px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#2a2828" />
-                <XAxis dataKey="month" stroke="#6b7280" />
-                <YAxis stroke="#6b7280" />
+                <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
+                <XAxis dataKey="month" stroke="var(--chart-axis)" />
+                <YAxis stroke="var(--chart-axis)" />
                 <Tooltip
                   contentStyle={{
-                    backgroundColor: "#1a1818",
-                    border: "1px solid #2a2828",
+                    backgroundColor: "var(--chart-tooltip-bg)",
+                    border: "1px solid var(--chart-tooltip-border)",
                     borderRadius: "8px",
                   }}
-                  labelStyle={{ color: "#fff" }}
+                  labelStyle={{ color: "var(--foreground)" }}
                   formatter={(value) => [formatNumber(value), "Users"]}
                 />
                 <Bar dataKey="users" fill="#4885e8" radius={[4, 4, 0, 0]} />

@@ -7,18 +7,18 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Sheet, SheetContent } from "@/components/ui/sheet";
 import { ReactLogo } from "../../assets/svgs";
 import SidebarContent from "./sidebarContent";
-import ThemeToggle from "@/components/ui/switchTheme";
+import { SwitchTheme } from "@/components/ui/switchTheme";
 
-const AdminLayout = () => {
+const AdminLayout = () => { 
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-[#0f0d0d]">
+    <div className="flex h-screen bg-background text-foreground transition-colors duration-300">
       {/* Desktop Sidebar */}
       <aside
         className={`
-          hidden lg:flex flex-col bg-[#1a1818] border-r border-[#363A42] transition-all duration-300 relative
+          hidden lg:flex flex-col bg-card border-r border-border transition-all duration-300 relative
           ${collapsed ? "w-[70px]" : "w-[240px]"}
         `}
       >
@@ -29,7 +29,7 @@ const AdminLayout = () => {
       <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
         <SheetContent
           side="left"
-          className="w-[280px] p-0 bg-[#1a1818] border-[#2a2828]"
+          className="w-[280px] p-0 bg-card border-border"
         >
           <SidebarContent onNavigate={() => setMobileOpen(false)} />
         </SheetContent>
@@ -38,7 +38,7 @@ const AdminLayout = () => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Header */}
-        <header className="h-16 bg-[#1a1818] border-b border-[#2a2828] flex items-center justify-between px-4 lg:px-6">
+        <header className="h-16 bg-card border-b border-border flex items-center justify-between px-4 lg:px-6 transition-colors duration-300">
           <div className="flex items-center gap-4">
             <Button
               variant="ghost"
@@ -49,25 +49,25 @@ const AdminLayout = () => {
               <Menu className="size-[22px]" />
             </Button>
             <img className="mx-auto" src={ReactLogo} alt="" />
-            <span className="text-white">React Project Starter</span>
+            <span className="font-semibold">React Project Starter</span>
           </div>
 
           <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-[#2a2828]">
+            <SwitchTheme />
+            <div className="hidden sm:flex items-center gap-2 pl-3 border-l border-border">
               <Avatar className="w-8 h-8">
                 <AvatarImage src={ReactLogo} />
-                <AvatarFallback className="bg-gradient-to-r from-[#FEC36D] to-[#D78001] text-white text-sm">
+                <AvatarFallback className="bg-gradient-to-r from-yellow to-orange text-white text-sm">
                   A
                 </AvatarFallback>
               </Avatar>
-              <span className="text-sm text-light">Admin</span>
+              <span className="text-sm font-medium">Admin</span>
             </div>
           </div>
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 overflow-auto p-4 lg:p-6">
+        <main className="flex-1 overflow-auto p-4 lg:p-6 bg-background">
           <Outlet />
         </main>
       </div>

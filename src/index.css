@@ -95,9 +95,10 @@
 }
 
 body {
-  @apply font-lato;
-  background-color: #0f0d0d;
-  color: #fff;
+  @apply font-lato bg-background text-foreground;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .root {
@@ -175,6 +176,12 @@ body {
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* Chart Colors - Light */
+  --chart-grid: #e5e7eb;
+  --chart-axis: #6b7280;
+  --chart-tooltip-bg: #ffffff;
+  --chart-tooltip-border: #e5e7eb;
 }
 
 .dark {
@@ -209,13 +216,16 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Chart Colors - Dark */
+  --chart-grid: #2a2828;
+  --chart-axis: #aab2c7;
+  --chart-tooltip-bg: #1a1818;
+  --chart-tooltip-border: #2a2828;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }

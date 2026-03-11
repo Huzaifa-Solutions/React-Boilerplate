@@ -14,13 +14,13 @@ const NavItem = ({ item, collapsed, onClick }) => {
         flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200
         ${
           isActive
-            ? "bg-gradient-to-r from-[#4885e8] to-[#2c20c9] hover:bg-gradient-to-r hover:from-[#2c20c9] hover:to-[#4885e8] text-[#fff] transition-colors"
-            : "text-light hover:text-white hover:bg-[#2a2828] transition-colors"
+            ? "bg-gradient-to-r from-[#4885e8] to-[#2c20c9] hover:bg-gradient-to-r hover:from-[#2c20c9] hover:to-[#4885e8] text-white"
+            : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
         }
         ${collapsed ? "justify-center" : ""}
       `}
     >
-      <item.icon className={`w-5 h-5 ${isActive ? "text-[#fff]" : ""}`} />
+      <item.icon className={`w-5 h-5 ${isActive ? "text-white" : ""}`} />
       {!collapsed && <span className="font-medium">{item.label}</span>}
     </NavLink>
   );
@@ -31,7 +31,7 @@ const NavItem = ({ item, collapsed, onClick }) => {
         <TooltipTrigger asChild>{content}</TooltipTrigger>
         <TooltipContent
           side="right"
-          className="bg-white border-[#2a2828] text-dark font-semibold tracking-wide font-arial"
+          className="bg-popover border-border text-popover-foreground font-semibold tracking-wide font-arial"
         >
           {item.label}
         </TooltipContent>

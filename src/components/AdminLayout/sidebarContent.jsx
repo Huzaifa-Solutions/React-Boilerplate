@@ -23,7 +23,7 @@ const SidebarContent = ({ collapsed, setCollapsed, onNavigate }) => {
             <div className="w-8 h-8 flex items-center justify-center">
               <img src={ReactLogo} alt="" />
             </div>
-            <span className="font-bold text-white">Project Starter</span>
+            <span className="font-bold">Project Starter</span>
           </div>
         )}
         {collapsed && (
@@ -35,9 +35,9 @@ const SidebarContent = ({ collapsed, setCollapsed, onNavigate }) => {
           variant="ghost"
           size="icon"
           onClick={() => setCollapsed?.(!collapsed)}
-          className={`hidden lg:flex text-light hover:text-black ${
+          className={`hidden lg:flex text-muted-foreground hover:text-foreground ${
             collapsed
-              ? "absolute -right-3 top-6 bg-[#1a1818] border border-[#363A42] rounded-full w-6 h-6 p-0"
+              ? "absolute -right-3 top-6 bg-card border border-border rounded-full w-6 h-6 p-0"
               : ""
           }`}
         >
@@ -49,7 +49,7 @@ const SidebarContent = ({ collapsed, setCollapsed, onNavigate }) => {
         </Button>
       </div>
 
-      <Separator className="bg-[#363A42]" />
+      <Separator className="bg-border opacity-50" />
 
       {/* Navigation */}
       <nav className="flex-1 px-3 py-4 space-y-1">
@@ -63,7 +63,7 @@ const SidebarContent = ({ collapsed, setCollapsed, onNavigate }) => {
         ))}
       </nav>
 
-      <Separator className="bg-[#363A42]" />
+      <Separator className="bg-border opacity-50" />
 
       {/* User Section */}
       <div className={`p-3 ${collapsed ? "flex justify-center" : ""}`}>
@@ -71,18 +71,18 @@ const SidebarContent = ({ collapsed, setCollapsed, onNavigate }) => {
           variant="ghost"
           className={`w-full py-7 ${
             collapsed ? "p-0 h-auto" : "justify-start"
-          } text-light hover:text-white hover:bg-[#2a2828] h-10`}
+          } text-muted-foreground hover:text-foreground hover:bg-muted/50 h-10 transition-colors duration-200`}
         >
           <Avatar className="w-8 h-8">
             <AvatarImage src={ReactLogo} />
-            <AvatarFallback className="bg-gradient-to-r from-[#FEC36D] to-[#D78001] text-white text-sm">
+            <AvatarFallback className="bg-gradient-to-r from-yellow to-orange text-white text-sm">
               A
             </AvatarFallback>
           </Avatar>
           {!collapsed && (
             <div className="ml-3 text-left">
-              <p className="text-sm font-medium text-white">Admin</p>
-              <p className="text-xs text-light">admin@example.com</p>
+              <p className="text-sm font-medium text-foreground">Admin</p>
+              <p className="text-xs text-muted-foreground">admin@example.com</p>
             </div>
           )}
         </Button>

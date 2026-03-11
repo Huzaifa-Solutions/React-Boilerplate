@@ -2,16 +2,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 
 const StatCard = ({ title, value, change, icon: Icon, trend }) => (
-  <Card className="bg-[#1a1818] border-[#363A42] hover:shadow-[0_0_20px] transition-shadow hover:shadow-[#2c20c9]/50">
-    <CardContent className="">
+  <Card className="hover:shadow-lg dark:hover:shadow-[0_0_30px_#0000ff80] transition-all duration-300">
+    <CardContent className="p-6">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-sm font-medium text-light">{title}</p>
-          <h3 className="text-2xl font-bold text-white mt-1">{value}</h3>
+          <p className="text-sm font-medium text-muted-foreground">{title}</p>
+          <h3 className="text-2xl font-bold mt-1">{value}</h3>
           {change !== undefined && (
             <div
               className={`flex items-center gap-0.5 mt-1 text-sm ${
-                trend === "up" ? "text-green" : "text-red"
+                trend === "up" ? "text-green-500" : "text-red-500"
               }`}
             >
               {trend === "up" ? (
@@ -20,7 +20,7 @@ const StatCard = ({ title, value, change, icon: Icon, trend }) => (
                 <ArrowDownRight className="w-4 h-4" />
               )}
               <span>{change}%</span>
-              <span className="text-light ml-1">vs last month</span>
+              <span className="text-muted-foreground ml-1">vs last month</span>
             </div>
           )}
         </div>
