@@ -31,9 +31,8 @@
 }
 
 .primary-gradient {
-  background: linear-gradient(to left, #FEC36D, #D78001);
+  background: linear-gradient(to left, #fec36d, #d78001);
 }
-
 
 .new-gradient-border {
   position: relative;
@@ -48,7 +47,9 @@
   padding: 1.5px;
   border-radius: 8px;
   background: linear-gradient(90deg, #545454, #212121);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -67,7 +68,9 @@
   padding: 1.5px;
   border-radius: 10px;
   background: linear-gradient(90deg, #fec36d, #d78001);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -96,9 +99,10 @@
 
 body {
   @apply font-lato bg-background text-foreground;
-  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              color 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
-              border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .root {
