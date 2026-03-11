@@ -65,7 +65,7 @@ const VerifyOTP = () => {
           <p className="text-sm font-semibold text-center lg:text-left text-foreground/70">
             Enter code
           </p>
-          <div className="flex justify-center lg:justify-start">
+          <div className="flex items-center justify-center">
             <InputOTP
               maxLength={6}
               value={otpValue}
@@ -75,27 +75,27 @@ const VerifyOTP = () => {
               <InputOTPGroup className="gap-2 sm:gap-3">
                 <InputOTPSlot
                   index={0}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 !rounded-lg focus:border-primary transition-all shadow-sm"
                 />
                 <InputOTPSlot
                   index={1}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 rounded-lg focus:border-primary transition-all shadow-sm"
                 />
                 <InputOTPSlot
                   index={2}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 rounded-lg focus:border-primary transition-all shadow-sm"
                 />
                 <InputOTPSlot
                   index={3}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 rounded-lg focus:border-primary transition-all shadow-sm"
                 />
                 <InputOTPSlot
                   index={4}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 rounded-lg focus:border-primary transition-all shadow-sm"
                 />
                 <InputOTPSlot
                   index={5}
-                  className="w-12 h-14 sm:w-14 sm:h-16 text-xl font-bold bg-muted/50 border-2 rounded-xl focus:border-primary transition-all shadow-sm"
+                  className="lg:size-14 size-12 text-xl font-bold bg-muted/50 border-2 !rounded-lg focus:border-primary transition-all shadow-sm"
                 />
               </InputOTPGroup>
             </InputOTP>
@@ -124,7 +124,7 @@ const VerifyOTP = () => {
           <button
             onClick={handleResend}
             disabled={timer > 0}
-            className={`font-semibold inline-flex items-center gap-1.5 transition-colors ${timer > 0 ? "text-muted-foreground/50 cursor-not-allowed" : "text-primary hover:text-primary/80"}`}
+            className={`font-semibold inline-flex items-center gap-0.5 transition-colors ${timer > 0 ? "text-muted-foreground/50 cursor-not-allowed" : "text-primary hover:text-primary/80"}`}
           >
             {timer > 0 ? (
               `Resend code in ${timer}s`

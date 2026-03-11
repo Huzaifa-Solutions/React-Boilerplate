@@ -28,16 +28,18 @@ const Login = () => {
 
   return (
     <div className="space-y-8">
-      <div className="text-center lg:text-left space-y-2">
+      <div className="text-center lg:text-left space-y-1">
         <h2 className="text-3xl font-bold tracking-tight">Welcome Back</h2>
-        <p className="text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Enter your details to access your account.
         </p>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="email">Email Address</Label>
+          <Label className="font-semibold" htmlFor="email">
+            Email Address
+          </Label>
           <div className="relative">
             <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
             <Input
@@ -63,10 +65,12 @@ const Login = () => {
 
         <div className="space-y-2">
           <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
+            <Label className="font-semibold" htmlFor="password">
+              Password
+            </Label>
             <Link
               to="/auth/forgot-password"
-              className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+              className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors center-underline"
             >
               Forgot password?
             </Link>
@@ -105,11 +109,11 @@ const Login = () => {
           )}
         </div>
 
-        <div className="flex items-center space-x-2 py-1">
+        <div className="flex items-center space-x-2">
           <input
             id="remember"
             type="checkbox"
-            className="mt-1 w-4 h-4 rounded-sm border border-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground"
+            className="w-4 h-4 rounded-sm border border-primary shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground accent-[#4885e8]"
             {...register("remember")}
           />
           <Label
@@ -122,7 +126,7 @@ const Login = () => {
 
         <Button
           type="submit"
-          className="w-full h-12 text-base font-semibold primary-gradient hover:opacity-90 transition-opacity"
+          className="w-full h-12 text-base font-medium hover:opacity-90 transition-colors duration-300"
           disabled={isLoading}
         >
           {isLoading ? (
@@ -138,23 +142,23 @@ const Login = () => {
 
       <div className="relative py-2">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-border" />
+          <span className="w-full border-t border-primary" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-3 text-muted-foreground font-medium">
+          <span className="bg-background px-3 text-primary font-medium">
             Or continue with
           </span>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
-        <div className="new-gradient-border h-12">
+      <div className="grid grid-cols-1 gap-1">
+        <div className="new-gradient-border">
           <Button
             variant="ghost"
-            className="w-full h-[11.2] rounded-xl hover:bg-white/5 font-medium transition-all"
+            className="w-full h-12 rounded-xl hover:shadow-lg hover:bg-white bg-accent dark:bg-dark dark:hover:bg-white/5 font-medium transition-colors duration-300"
             type="button"
           >
-            <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24">
+            <svg className="mr-2 size-5" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
                 fill="#4285F4"
@@ -172,7 +176,7 @@ const Login = () => {
                 fill="#EA4335"
               />
             </svg>
-            Google
+            Continue with Google
           </Button>
         </div>
       </div>

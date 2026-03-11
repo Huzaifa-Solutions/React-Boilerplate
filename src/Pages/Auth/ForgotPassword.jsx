@@ -45,7 +45,7 @@ const ForgotPassword = () => {
         </p>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 pt-4">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="space-y-2">
           <Label htmlFor="email" className="font-semibold text-foreground/80">
             Email Address
@@ -75,7 +75,7 @@ const ForgotPassword = () => {
 
         <Button
           type="submit"
-          className="w-full h-12 text-base font-semibold primary-gradient hover:opacity-95 shadow-md transition-all active:scale-[0.98]"
+          className="w-full h-12 text-base font-semibold hover:opacity-95 shadow-md active:scale-[0.98] transition-colors duration-300"
           disabled={isLoading}
         >
           {isLoading ? (
